@@ -1,1 +1,1 @@
-# KeypointGAN
+# LatentKeypointGAN
