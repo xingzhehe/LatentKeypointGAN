@@ -1,118 +1,136 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>KeypointGAN: Controlling GANs via Latent Keypoints</title>
-  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="vid/style.css" title="style" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>KeypointGAN</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/citation.css">
+    <link rel="stylesheet" href="css/title.css">
 </head>
 
-
 <body>
-    <div id="main" class="border">
-        <div id="paper" class="border">
-            <div id="content" class="border">
-                <div id=title_text>KeypointGAN: Controlling GANs via Latent Keypoints</div>
+    <div class="header" id="home" style="padding-bottom: 90px;"></div>
 
-                <div id=disclaimer class="border">Please open this webpage in one of the following browsers, which support embedded videos:
-                    <ul>
-                        <li>Google Chrome >= 65.0.3325</li>
-                        <li>Mozilla Firefox >= 59.0.1</li>
-                        <li>Apple Safari >= 11.0.3</li>
-                    </ul>
+    <section class="title">
+        KeypointGAN: Controlling GANs via Latent Keypoints
+    </section>
 
-                </div>
+    <section class="author">
+        <a href="https://xingzhehe.github.io/">Xingzhe He</a>
+        <a href="https://www.cs.ubc.ca/~wandt/index.html">Bastian Wandt</a>
+        <a href="https://www.cs.ubc.ca/~rhodin/web/">Helge Rhodin</a>
+        <affiliation>The University of British Columbia</affiliation>
+        <a href="" class="links">[paper]</a>
+    </section>
 
-                <div id=pcloud_comp class="border">
-                    <h1>Location Editing on FFHQ</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/ffhq_pos.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                    <p>In this video, we fix all the embeddings and only change the keypoint locations. 
-					In the first example, we change all keypoint locations. 
-					In subsequent examples, individual parts are moved to edit the face locally. 
-					It is possible to faithfully move keypoints while the GAN maintains the overall integrity  of a natural face.
-                    </p>
-                </div>
+    <div class="header" id="abstract">Abstract</div>
+    <div class="line"></div>
 
-                <div id=pcloud_comp class="border">
-                    <h1>Keypoint Embeddings Disentanglement on FFHQ</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/ffhq_emb.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-					<p>In this example, we interpolate a subset of the keypoint embeddings from a source to a target person while fixing all other embeddings and the keypoint locations. 
-					The changed keypoints are marked with crosses. In the first example, we replace all keypoint embeddings, and in subsequent ones, we exchange only subsets. This allows to exchange features between faces.</p>
-                </div>
-
-                <div id=ang_errs class="border">
-                    <h1>Background Disentanglement on FFHQ</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/ffhq_bg.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                    <p>Besides keypoint location and embedding, the background embedding can be changed too. 
-					Here, we analyze the effect of changing the background while fixing the keypoint locations and keypoint embeddings. 
-					For each face, we show the background interpolation between three different backgrounds. The background controls global features such as background texture and hair.</p>
-                </div>
-
-                <div id=pcloud_comp class="border">
-                    <h1>Location Editing on Bedroom</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/bedroom_pos.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                    <p>As for faces, we first fix all the keypoint embeddings and only change the keypoint locations. 
-					This lets us move key objects in the scene. Because KeypointGAN is an image-based approach, not designed for video animation, the interpolation is at times wobbly. 
-					Still, the location can be changed faithfully for creating novel image constellations.
-                    </p>
-                </div>
-
-                <div id=pcloud_comp class="border">
-                    <h1>Keypoint Embeddings Disentanglement on Bedroom</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/bedroom_emb.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-					<p>Object style and size can also be edited by interpolating a subset of the keypoint embeddings from a source to a target image while fixing all other embeddings and the keypoint locations. The changed keypoints are marked with crosses.
-                    </p>
-                </div>
-
-                <div id=pcloud_comp class="border">
-                    <h1>Appearance Editing on BBC Pose</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/bbcpose_emb.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-					<p>KeypointGAN is not specific to a particular domain. When trained on human images, we can interpolate the keypoint embeddings to control the human appearance from a source to a target person. 
-					As before, all other embeddings and the keypoint locations are fixed. While some appearance interpolations appear to be very fast, they are still smooth. 
-					For example, the shape of the face changes smoothly and the hair grows continuously. 
-					</p>
-					<p>
-					<b>Limitations:</b> We believe the reason for the fast changes (not observed for facial and bedroom images) is the lack of variance of the original dataset: only 5 different people exist (although each of them has two or three sets of clothes). 
-					We also observe that the human identity is strongly correlated with the right half of the background, which is a feature of the original dataset and can also be observed for related work.
-                    </p>
-                </div>
-
-                <div id=pcloud_comp class="border">
-                    <h1>Pose Editing on BBC Pose</h1>
-                    <video width="800" class="border video_pad" controls>
-                    <source src="vid/bbcpose_pos.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                    </video>
-                    <p>In this experiment, we fix all embeddings and only change the keypoint locations to change human pose.</p><p>
-					<b>Limitations:</b> When linearly moving the keypoints we observe occasional discontinuous interpolations. 
-					We believe the reason is that these linear interpolations create unnatural poses. 
-					For example, moving only the keypoint associated with the right hand should also change the position of the right elbow. 
-					This cannot be described by linear interpolation. Since these interpolated human poses are not meaningful, they are not contained in the dataset and, therefore, cannot be reconstructed by our approach.
-                    </p>
-                </div>
-
-                
-
-            </div>
-        </div>
+    <div class="container">
+        <p>
+            Generative adversarial networks (GANs) have attained photo-realistic quality. However, it remains an open challenge of how to best control the image content. We introduce KeypointGAN, a two-stage GAN that is trained end-to-end on the classical GAN objective yet internally conditioned on a set of sparse keypoints with associated appearance embeddings that respectively control the position and style of the generated objects and their parts. A major difficulty that we address with suitable network architectures and training schemes
+            is disentangling the image into spatial and appearance factors <b>without domain knowledge and supervision signals</b>. We demonstrate that KeypointGAN provides an interpretable latent space that can be used to re-arrange the generated images by re-positioning and exchanging keypoint embeddings, such as combining the eyes, nose, and mouth from different images for generating portraits. In addition, the explicit generation of keypoints and matching images enables a new, GAN-based methodology for unsupervised keypoint detection.
+        </p>
     </div>
+
+    <h1 class="header" id="videos">Videos</h1>
+    <div class="line"></div>
+
+    <div class="container">
+        <video src="vid/ffhq_pos.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            In this video, we fix all the embeddings and only change the keypoint locations. 
+            In the first example, we change all keypoint locations. 
+            In subsequent examples, individual parts are moved to edit the face locally. 
+            It is possible to faithfully move keypoints while the GAN maintains the overall integrity  of a natural face.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/ffhq_emb.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            In this example, we interpolate a subset of the keypoint embeddings from a source to a target person while fixing all other embeddings and the keypoint locations. 
+            The changed keypoints are marked with crosses. In the first example, we replace all keypoint embeddings, and in subsequent ones, we exchange only subsets. This allows to exchange features between faces.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/ffhq_bg.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            Besides keypoint location and embedding, the background embedding can be changed too. 
+            Here, we analyze the effect of changing the background while fixing the keypoint locations and keypoint embeddings. 
+            For each face, we show the background interpolation between three different backgrounds. The background controls global features such as background texture and hair.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/bedroom_pos.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            As for bedrooms, we first fix all the keypoint embeddings and only change the keypoint locations. This lets us move key objects in the scene. Because KeypointGAN is an image-based approach, not designed for video animation, the interpolation is at times wobbly. 
+            Still, the location can be changed faithfully for creating novel image constellations.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/bedroom_emb.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            Object style and size can also be edited by interpolating a subset of the keypoint embeddings from a source to a target image while fixing all other embeddings and the keypoint locations. The changed keypoints are marked with crosses.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/bbcpose_emb.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            KeypointGAN is not specific to a particular domain. When trained on human images, we can interpolate the keypoint embeddings to control the human appearance from a source to a target person. As before, all other embeddings and the keypoint locations are fixed. While some appearance interpolations appear to be very fast, they are still smooth. 
+            For example, the shape of the face changes smoothly and the hair grows continuously. 
+        </p>
+        <p>
+            <b>Limitations:</b> We believe the reason for the fast changes (not observed for facial and bedroom images) is the lack of variance of the original dataset: only 5 different people exist (although each of them has two or three sets of clothes). 
+            We also observe that the human identity is strongly correlated with the right half of the background, which is a feature of the original dataset and can also be observed for related work.
+        </p>
+    </div>
+
+    <div class="container">
+        <video src="vid/bbcpose_pos.mp4" type="video/mp4" controls>
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            In this experiment, we fix all embeddings and only change the keypoint locations to change human pose.
+        </p>
+        <p>
+            <b>Limitations:</b> When linearly moving the keypoints we observe occasional discontinuous interpolations. 
+            We believe the reason is that these linear interpolations create unnatural poses. 
+            For example, moving only the keypoint associated with the right hand should also change the position of the right elbow. 
+            This cannot be described by linear interpolation. Since these interpolated human poses are not meaningful, they are not contained in the dataset and, therefore, cannot be reconstructed by our approach.
+        </p>
+    </div>
+
+    <div class="header" id="bibtex">BibTex</div>
+    <div class="line"></div>
+
+    <section class="citation">
+        @article{he2021keypointgan, </br>
+            &emsp;&emsp;&emsp;title={KeypointGAN: Controlling GANs via Latent Keypoints},</br>
+            &emsp;&emsp;&emsp;author={He, Xingzhe and Wandt, Bastian and Rhodin, Helge},</br>
+            &emsp;&emsp;&emsp;journal={arXiv preprint},</br>
+            &emsp;&emsp;&emsp;year={2021}</br>
+        }
+    </section>
+
 </body>
+
 </html>
