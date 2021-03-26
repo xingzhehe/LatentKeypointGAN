@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>KeypointGAN</title>
+    <title>LatentKeypointGAN</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/citation.css">
     <link rel="stylesheet" href="css/title.css">
@@ -14,7 +14,7 @@
     <div class="header" id="home" style="padding-bottom: 90px;"></div>
 
     <section class="title">
-        KeypointGAN: Controlling GANs via Latent Keypoints
+        LatentKeypointGAN: Controlling GANs via Latent Keypoints
     </section>
 
     <section class="author">
@@ -30,8 +30,8 @@
 
     <div class="container">
         <p>
-            Generative adversarial networks (GANs) have attained photo-realistic quality. However, it remains an open challenge of how to best control the image content. We introduce KeypointGAN, a two-stage GAN that is trained end-to-end on the classical GAN objective yet internally conditioned on a set of sparse keypoints with associated appearance embeddings that respectively control the position and style of the generated objects and their parts. A major difficulty that we address with suitable network architectures and training schemes
-            is disentangling the image into spatial and appearance factors <b>without domain knowledge and supervision signals</b>. We demonstrate that KeypointGAN provides an interpretable latent space that can be used to re-arrange the generated images by re-positioning and exchanging keypoint embeddings, such as combining the eyes, nose, and mouth from different images for generating portraits. In addition, the explicit generation of keypoints and matching images enables a new, GAN-based methodology for unsupervised keypoint detection.
+            Generative adversarial networks (GANs) have attained photo-realistic quality. However, it remains an open challenge of how to best control the image content. We introduce LatentKeypointGAN, a two-stage GAN that is trained end-to-end on the classical GAN objective yet internally conditioned on a set of sparse keypoints with associated appearance embeddings that respectively control the position and style of the generated objects and their parts. A major difficulty that we address with suitable network architectures and training schemes
+            is disentangling the image into spatial and appearance factors <b>without domain knowledge and supervision signals</b>. We demonstrate that LatentKeypointGAN provides an interpretable latent space that can be used to re-arrange the generated images by re-positioning and exchanging keypoint embeddings, such as combining the eyes, nose, and mouth from different images for generating portraits. In addition, the explicit generation of keypoints and matching images enables a new, GAN-based methodology for unsupervised keypoint detection.
         </p>
     </div>
 
@@ -76,7 +76,7 @@
             Your browser does not support the video tag.
         </video>
         <p>
-            As for bedrooms, we first fix all the keypoint embeddings and only change the keypoint locations. This lets us move key objects in the scene. Because KeypointGAN is an image-based approach, not designed for video animation, the interpolation is at times wobbly. 
+            As for bedrooms, we first fix all the keypoint embeddings and only change the keypoint locations. This lets us move key objects in the scene. Because LatentKeypointGAN is an image-based approach, not designed for video animation, the interpolation is at times wobbly. 
             Still, the location can be changed faithfully for creating novel image constellations.
         </p>
     </div>
@@ -95,7 +95,7 @@
             Your browser does not support the video tag.
         </video>
         <p>
-            KeypointGAN is not specific to a particular domain. When trained on human images, we can interpolate the keypoint embeddings to control the human appearance from a source to a target person. As before, all other embeddings and the keypoint locations are fixed. While some appearance interpolations appear to be very fast, they are still smooth. 
+            LatentKeypointGAN is not specific to a particular domain. When trained on human images, we can interpolate the keypoint embeddings to control the human appearance from a source to a target person. As before, all other embeddings and the keypoint locations are fixed. While some appearance interpolations appear to be very fast, they are still smooth. 
             For example, the shape of the face changes smoothly and the hair grows continuously. 
         </p>
         <p>
@@ -123,8 +123,8 @@
     <div class="line"></div>
 
     <section class="citation">
-        @article{he2021keypointgan, </br>
-            &emsp;&emsp;&emsp;title={KeypointGAN: Controlling GANs via Latent Keypoints},</br>
+        @article{he2021LatentKeypointGAN, </br>
+            &emsp;&emsp;&emsp;title={LatentKeypointGAN: Controlling GANs via Latent Keypoints},</br>
             &emsp;&emsp;&emsp;author={He, Xingzhe and Wandt, Bastian and Rhodin, Helge},</br>
             &emsp;&emsp;&emsp;journal={arXiv preprint},</br>
             &emsp;&emsp;&emsp;year={2021}</br>
