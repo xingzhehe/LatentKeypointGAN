@@ -19,6 +19,7 @@ video {
   margin: 20px auto;
   display: block;
   width: 800px;
+  max-width: 98%;
 }
 
 .line {
