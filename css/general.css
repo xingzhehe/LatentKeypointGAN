@@ -28,6 +28,7 @@ video {
   margin: 20px auto;
   margin-bottom: -10px;
   width: 1024px;
+  max-width: 98%;
   border-top: solid #ACC0D8 1px;
 }
 
